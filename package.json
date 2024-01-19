@@ -1,0 +1,19 @@
+{
+  "name": "marked-down",
+  "version": "0.0.1",
+  "description": "Simple markdown web component.",
+  "main": "marked-down.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/treeder/marked-down.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/treeder/marked-down/issues"
+  },
+  "homepage": "https://github.com/treeder/marked-down#readme"
+}
