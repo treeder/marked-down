@@ -16,6 +16,8 @@ npm install treeder/marked-down
 
 ### To use from CDN
 
+This uses [Lit](https://lit.dev), so first [add Lit to your importmap](https://thingster.app/things/qT_iAr9PuPK2FVNJCxANY). 
+
 Either add this to the page where you will use it:
 
 ```html
@@ -42,9 +44,9 @@ Or add to your importmap, put this in the `<head></head>` section:
 The easiest way is to use the web component.
 
 ```html
-# TODO
 <script type="module">
-import 'marked-down'
+import 'https://cdn.jsdelivr.net/gh/treeder/marked-down@0/marked-down.js'
+</script>
 
 <marked-down>
 ## Marked Down is Cool!
