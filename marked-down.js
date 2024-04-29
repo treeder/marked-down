@@ -32,8 +32,7 @@ export class MarkedDown extends LitElement {
               margin-block-start: 0;
         }
         a {
-            text-decoration: none;
-            color: var(--marked-down-a,); /* https://developer.mozilla.org/en-US/docs/Web/CSS/var#syntax */
+            color: var(--marked-down-a-color,); /* https://developer.mozilla.org/en-US/docs/Web/CSS/var#syntax */
           }
           a:hover {
                 text-decoration: underline;
@@ -49,6 +48,7 @@ export class MarkedDown extends LitElement {
         img {
             max-width: 100%;
             border: 1px solid silver;
+            padding: 8px;
             border-radius: 8px;
             margin: 0 auto;
         }
