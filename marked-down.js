@@ -160,11 +160,11 @@ export class MarkedDown extends LitElement {
         }
 
         allText = allText.trim()
-        console.log("BOD:", allText)
+        // console.log("BOD:", allText)
         let m = marked.parse(allText)
-        console.log("BOD3:", m)
+        // console.log("BOD3:", m)
         m = purify.sanitize(m)
-        console.log("BOD4:", m)
+        // console.log("BOD4:", m)
         let d = document.createElement("div")
         d.innerHTML = m
         this.renderRoot.querySelector("#content2").style.display = 'none'
