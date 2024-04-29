@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit'
 
-import { marked } from "https://cdn.jsdelivr.net/npm/marked@10/lib/marked.esm.js"
+import { marked } from "https://cdn.jsdelivr.net/npm/marked@12/lib/marked.esm.js"
 import { markedHighlight } from "https://cdn.jsdelivr.net/npm/marked-highlight@2/src/index.js"
 import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/es/highlight.min.js';
 import purify from 'https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.es.js'
@@ -38,9 +38,19 @@ export class MarkedDown extends LitElement {
           a:hover {
                 text-decoration: underline;
           }
+          h1, h2, h3, h4, h5, h6, p, ul, ol {
+            margin-bottom: 24px;
+          }
+          li {
+            padding-top: 4px;
+            padding-bottom: 4px;
+          }
 
         img {
             max-width: 100%;
+            border: 1px solid silver;
+            border-radius: 8px;
+            margin: 0 auto;
         }
 
         code {
@@ -102,7 +112,6 @@ export class MarkedDown extends LitElement {
 
     async connectedCallback() {
         super.connectedCallback()
-
     }
 
     render() {
@@ -114,12 +123,10 @@ export class MarkedDown extends LitElement {
         }
         return html`
         
-        <div id="content">
-
-    </div>
-            <div id="content2">
-                <slot></slot>
-            </div>
+<div id="content"></div>
+<div id="content2">
+<slot></slot>
+</div>
         `
     }
 
@@ -135,22 +142,29 @@ export class MarkedDown extends LitElement {
         if (this.content) {
             allText = this.content
         } else {
-            // get it from the slow
+            // get it from the slot
             let body = this.shadowRoot.querySelector('slot')
-            // console.log("BOD2:", body.textContent)
+            // console.log("SLOT BODY:", body.textContent)
+            // console.log("innerHTML", body.innerHTML)
             const childNodes = body.assignedNodes({ flatten: true })
             // ... do something with childNodes ...
             allText = childNodes.map((node) => {
+                // console.log("NODE:", node)
+                // console.log("has textContent:", node.textContent)
+                // console.log("innerHTML:", node.innerHTML)
+                if (node.innerHTML) {
+                    return node.innerHTML
+                }
                 return node.textContent ? node.textContent : ''
             }).join('')
         }
 
         allText = allText.trim()
-        // console.log("BOD:", allText)
+        console.log("BOD:", allText)
         let m = marked.parse(allText)
-        // console.log("BOD3:", m)
+        console.log("BOD3:", m)
         m = purify.sanitize(m)
-        // console.log("BOD4:", m)
+        console.log("BOD4:", m)
         let d = document.createElement("div")
         d.innerHTML = m
         this.renderRoot.querySelector("#content2").style.display = 'none'
