@@ -32,7 +32,7 @@ export class MarkedDown extends LitElement {
               margin-block-start: 0;
         }
         a {
-            color: var(--marked-down-a-color,); /* https://developer.mozilla.org/en-US/docs/Web/CSS/var#syntax */
+            color: var(--md-sys-color-primary); /* https://developer.mozilla.org/en-US/docs/Web/CSS/var#syntax */
           }
           a:hover {
                 text-decoration: underline;
@@ -54,8 +54,8 @@ export class MarkedDown extends LitElement {
         }
 
         code {
-            background-color: var(--marked-down-code-background-color, #22272e);
-            color: var(--marked-down-code-color, #adbac7);
+            background-color: var(--md-sys-color-surface-variant, #22272e);
+            color: var(--md-sys-color-on-surface-variant, #adbac7);
             padding: 0.2em 0.4em;
             border-radius: 6px;
         }
