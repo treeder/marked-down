@@ -1,6 +1,6 @@
 {
   "name": "marked-down",
-  "version": "0.0.7",
+  "version": "1.0.2",
   "description": "Simple markdown web component.",
   "main": "marked-down.js",
   "scripts": {
