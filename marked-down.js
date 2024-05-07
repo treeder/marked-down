@@ -37,8 +37,12 @@ export class MarkedDown extends LitElement {
           a:hover {
                 text-decoration: underline;
           }
-          h1, h2, h3, h4, h5, h6, p, ul, ol {
-            margin-bottom: 24px;
+          h1, h2, h3, h4, h5, h6, p {
+            margin-bottom: 20px;
+          }
+          ul, ol {
+            margin-top: 4px;
+            margin-bottom: 4px;
           }
           li {
             padding-top: 4px;
