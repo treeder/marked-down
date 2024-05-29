@@ -16,28 +16,19 @@ npm install treeder/marked-down
 
 ### To use from CDN
 
+#### Add Lit to importmap
+
 This uses [Lit](https://lit.dev), so first [add Lit to your importmap](https://thingster.app/things/qT_iAr9PuPK2FVNJCxANY). 
 
-Either add this to the page where you will use it:
+#### Import marked-down
+
+Then import marked-down on the pages where you will use it:
 
 ```html
 <script type="module">
 import 'https://cdn.jsdelivr.net/gh/treeder/marked-down@0/marked-down.js'
 </script>
 ```
-
-Or add to your importmap, put this in the `<head></head>` section:
-
-```html
-<script type="importmap">
-  {
-    "imports": {
-      "marked-down": "https://cdn.jsdelivr.net/gh/treeder/marked-down@0/marked-down.js"
-    }
-  }
-</script>
-```
-
 
 ### Usage
 
@@ -60,4 +51,29 @@ Isn't it though? Why is it cool?
 </marked-down>
 ```
 
-View code for the demo [here](/components/index.html).
+View code for the demo [here](/demo/index.html).
+
+#### Adding marked-down to importmap
+
+You can also add marked-down to your importmap and use it like this:
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      LIT IMPORTS HERE (see above)
+      "marked-down": "https://cdn.jsdelivr.net/gh/treeder/marked-down@0/marked-down.js"
+    }
+  }
+</script>
+```
+
+Then import on pages like this:
+
+```html
+<script type="module">
+import 'marked-down'
+</script>
+```
+
+The rest is the same.
