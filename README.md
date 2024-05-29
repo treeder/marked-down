@@ -4,7 +4,7 @@ An ESM ready, drop in anywhere web component. This uses [marked](https://marked.
 
 ## Demo
 
-[View demo](https://chainparency.github.io/zxinger/)
+[View demo](https://treeder.github.io/marked-down/)
 
 ## Quickstart
 
