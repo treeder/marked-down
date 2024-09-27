@@ -2,7 +2,7 @@ import { html, css, LitElement } from 'lit'
 
 import { marked } from "https://cdn.jsdelivr.net/npm/marked@12/lib/marked.esm.js"
 import { markedHighlight } from "https://cdn.jsdelivr.net/npm/marked-highlight@2/src/index.js"
-import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/es/highlight.min.js';
+import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/es/highlight.min.js'
 import purify from 'https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.es.js'
 
 export class MarkedDown extends LitElement {
@@ -17,9 +17,9 @@ export class MarkedDown extends LitElement {
             highlight: function (code, lang) {
                 // console.log('code:', code, 'lang:', lang)
                 // const hljs = highlightjs
-                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                const language = hljs.getLanguage(lang) ? lang : 'plaintext'
                 // console.log('language:', language)
-                return hljs.highlight(code, { language: language }).value;
+                return hljs.highlight(code, { language: language }).value
             },
             langPrefix: 'hljs language-',
         }))
@@ -57,9 +57,9 @@ export class MarkedDown extends LitElement {
             margin: 0 auto;
         }
 
-        code {
-            background-color: var(--md-sys-color-surface-variant, #22272e);
-            color: var(--md-sys-color-on-surface-variant, #adbac7);
+        code:not(pre) {
+            background-color: var(--marked-down-inline-code-background-color, #22272e);
+            color: var(--marked-down-inline-code-color, #adbac7);
             padding: 0.2em 0.4em;
             border-radius: 6px;
         }
@@ -135,7 +135,7 @@ export class MarkedDown extends LitElement {
     }
 
     escapeHtml = (unsafe) => {
-        return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+        return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;')
     }
 
     firstUpdated() {

@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <script type="importmap">
+  <script type="importmap">
         {
           "imports": {
             "lit": "https://cdn.jsdelivr.net/npm/lit@3/index.js",
@@ -18,12 +18,12 @@
 </head>
 
 <body>
-    <script type="module">
-        import 'https://cdn.jsdelivr.net/gh/treeder/marked-down@0/marked-down.js'
-    </script>
+  <script type="module">
+    import 'https://cdn.jsdelivr.net/gh/treeder/marked-down@0/marked-down.js'
+  </script>
 
 
-    <marked-down>
+  <marked-down>
 ## Marked Down is Cool!
 
 Isn't it though! Why is it cool?
@@ -31,9 +31,15 @@ Isn't it though! Why is it cool?
 * It's easy
 * It's fast
 * It's simple
-* It uses ESM modules
+* It uses `ESM modules`
 
-This is inline `code thing` and this is big code block
+This is inline `code thing` and this is big code block with no language:
+
+```
+/hello moto
+```
+
+And this is one with a language:
 
 ```js
 function yooo(a, b) {
