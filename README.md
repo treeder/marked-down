@@ -26,7 +26,7 @@ Then import marked-down on the pages where you will use it:
 
 ```html
 <script type="module">
-import 'https://cdn.jsdelivr.net/gh/treeder/marked-down@0/marked-down.js'
+import 'https://cdn.jsdelivr.net/gh/treeder/marked-down@1/marked-down.js'
 </script>
 ```
 
@@ -36,7 +36,7 @@ The easiest way is to use the web component.
 
 ```html
 <script type="module">
-import 'https://cdn.jsdelivr.net/gh/treeder/marked-down@0/marked-down.js'
+import 'https://cdn.jsdelivr.net/gh/treeder/marked-down@1/marked-down.js'
 </script>
 
 <marked-down>
@@ -62,7 +62,7 @@ You can also add marked-down to your importmap and use it like this:
   {
     "imports": {
       LIT IMPORTS HERE (see above)
-      "marked-down": "https://cdn.jsdelivr.net/gh/treeder/marked-down@0/marked-down.js"
+      "marked-down": "https://cdn.jsdelivr.net/gh/treeder/marked-down@1/marked-down.js"
     }
   }
 </script>
