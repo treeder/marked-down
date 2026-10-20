@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit'
 
-import { marked } from "https://cdn.jsdelivr.net/npm/marked@12/lib/marked.esm.js"
+import { marked } from "https://cdn.jsdelivr.net/npm/marked@18/lib/marked.esm.js"
 import { markedHighlight } from "https://cdn.jsdelivr.net/npm/marked-highlight@2/src/index.js"
 import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/es/highlight.min.js'
 import purify from 'https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.es.js'
@@ -10,8 +10,6 @@ export class MarkedDown extends LitElement {
   static {
     marked.use({ // https://marked.js.org/using_advanced
       gfm: true,
-      mangle: false,
-      headerIds: false,
     })
     marked.use(markedHighlight({
       highlight: function (code, lang) {
